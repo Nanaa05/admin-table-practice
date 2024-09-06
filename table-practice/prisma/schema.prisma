@@ -1,0 +1,18 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Posts {
+  id      String  @id @default(cuid())
+  title   String
+  content String?
+  image   String?
+
+  @@map("posts")
+}

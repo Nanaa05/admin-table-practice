@@ -9,7 +9,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -72,7 +71,7 @@ export const columns: ColumnDef<Posts>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const payment = row.original;
-
+      console.log(payment);
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

@@ -3,12 +3,12 @@ import { Posts, columns } from "./columns";
 import { DataTable } from "./data-table";
 
 async function getData(): Promise<Posts[]> {
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post`, {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post`, {
     method: "GET",
     cache: "no-store",
   });
-  let posts = await data.json();
-  let post = posts.table;
+  const posts = await data.json();
+  const post = posts.table;
   return post;
 }
 
